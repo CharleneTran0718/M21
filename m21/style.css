@@ -1,0 +1,408 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-image: url('images/wano.jpg');
+    background-size: cover;
+    background-position: bottom; 
+    overflow: hidden;
+}
+
+body::before {
+    content: '';
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-repeat: no-repeat;
+    animation: movePattern 20s cubic-bezier(0.4, 0, 0.2, 1) infinite; /* Adjust the duration and cubic-bezier values as needed */
+}
+
+
+audio {
+  position: absolute;
+  top: 90%;
+  left: 80%;
+  transform: translate(-50%, -50%);
+  border: none;
+  opacity: 0.4; 
+  width: 20vw; 
+}
+
+@keyframes movePattern {
+  0%, 100% {
+      background-image: url('images/gum.png'); 
+      background-position: 5% 50%;
+      background-size: 23%;
+      filter: drop-shadow(0 0 10px rgba(128, 0, 128, 0.8));
+  }
+  8% {
+      background-image: url('images/flower.png');
+      background-position: 95% 50%;
+      background-size: 13%;
+      filter: drop-shadow(0 0 10px rgba(255, 102, 194, 0.8));
+  }
+  16% {
+      background-image: url('images/fire.png'); 
+      background-position: 5% 50%;
+      background-size: 11%;
+      filter: drop-shadow(0 0 10px rgba(255, 87, 9, 0.8));
+  }
+  24% {
+      background-image: url('images/heart.png');
+      background-position: 95% 50%;
+      background-size: 20%;
+      filter: drop-shadow(0 0 10px rgba(255, 9, 9, 0.8));
+  }
+  32% {
+      background-image: url('images/dark.png'); 
+      background-position: 5% 50%;
+      background-size: 15%;
+      filter: drop-shadow(0 0 10px rgba(86, 0, 86, 0.8));
+
+  }
+  40% {
+      background-image: url('images/kaido.png');
+      background-position: 95% 50%;
+      background-size: 20%;
+      filter: drop-shadow(0 0 10px rgba(2, 215, 218, 0.8));
+  }
+  48% {
+      background-image: url('images/string.png'); 
+      background-position: 5% 50%;
+      background-size: 15%;
+      filter: drop-shadow(0 0 10px rgba(248, 214, 255, 0.8));
+  }
+  56% {
+      background-image: url('images/mochi.png');
+      background-position: 95% 50%;
+      background-size: 13%;
+      filter: drop-shadow(0 0 10px rgba(216, 255, 214, 0.8));
+  }
+  64% {
+      background-image: url('images/barrier.png'); 
+      background-position: 5% 50%;
+      background-size: 14%;
+      filter: drop-shadow(0 0 10px rgba(102, 190, 97, 0.8));
+  }
+  72% {
+      background-image: url('images/white.png');
+      background-position: 95% 50%;
+      background-size: 14%;
+      filter: drop-shadow(0 0 10px rgba(130, 205, 255, 0.8));
+  }
+  80% {
+      background-image: url('images/marco.png'); 
+      background-position: 5% 50%;
+      background-size: 14%;
+      filter: drop-shadow(0 0 10px rgba(130, 253, 255, 0.8));
+
+  }
+}
+
+
+
+  .birthdayCard {
+    position: relative;
+    width: 250px;
+    height: 350px;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transform: perspective(2500px);
+    transition: 1s;
+  }
+  
+  .birthdayCard:hover {
+    transform: perspective(2500px) rotate(5deg);
+    box-shadow: inset 100px 20px 100px rgba(0, 0, 0, 0.2),
+      0 10px 100px rgba(0, 0, 0, 0.5);
+  }
+  
+  .birthdayCard:hover .cardFront {
+    transform: rotateY(-160deg);
+  }
+  
+  .birthdayCard:hover .happy {
+    visibility: hidden;
+  }
+  
+  .cardFront {
+    position: relative;
+    background-color: #fff;
+    width: 250px;
+    height: 350px;
+    overflow: hidden;
+    transform-origin: left;
+    box-shadow: inset 100px 20px 100px rgba(0, 0, 0, 0.2),
+      30px 0 50px rgba(0, 0, 0, 0.4);
+    transition: 0.6s;
+  }
+  
+  .happy {
+    font-family: Tahoma, sans-serif;
+    text-align: center;
+    margin: 30px;
+    background-image: linear-gradient(120deg, #56f1ff 0%, #3249ce 100%);
+    transition: 0.1s;
+  }
+  
+  .balloons {
+    position: absolute;
+  }
+  
+  .balloon-1,
+  .balloon-2,
+  .balloon-3,
+  .balloon-4 {
+    position: absolute;
+    width: 85px;
+    height: 95px;
+    border-radius: 50%;
+  }
+  
+  .balloon-1 {
+    background-color: rgba(194, 0, 45, 0.7);
+    left: -10px;
+    top: 50px;
+  }
+  
+  .balloon-2 {
+    background-color: rgba(0, 131, 61, 0.7);
+    left: 50px;
+    top: 20px;
+  }
+  
+  .balloon-3 {
+    background-color: rgba(255, 186, 26, 0.7);
+    left: 110px;
+    top: 50px;
+  }
+  
+  .balloon-4 {
+    background-color: rgba(12, 122, 159, 0.7);
+    left: 170px;
+    top: 50px;
+  }
+  
+  .balloon-1::before,
+  .balloon-2::before,
+  .balloon-3::before,
+  .balloon-4::before {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 155px;
+    background-color: #3939399d;
+    top: 95px;
+    left: 43px;
+  }
+  
+  .balloon-1::after,
+  .balloon-2::after,
+  .balloon-3::after,
+  .balloon-4::after {
+    content: "";
+    position: absolute;
+    border-right: 7px solid transparent;
+    border-left: 7px solid transparent;
+    top: 94px;
+    left: 37px;
+  }
+  
+  .balloon-1::after {
+    border-bottom: 10px solid #c41a42;
+  }
+  
+  .balloon-2::after {
+    border-bottom: 10px solid #04b183;
+  }
+  
+  .balloon-3::after {
+    border-bottom: 10px solid #ffc94c;
+  }
+  
+  .balloon-4::after {
+    border-bottom: 10px solid #19b4c8;
+  }
+  
+  .cardInside {
+    position: absolute;
+    background-color: #fff;
+    width: 250px;
+    height: 350px;
+    z-index: -1;
+    left: 0;
+    top: 0;
+    box-shadow: inset 100px 20px 100px rgba(0, 0, 0, 0.2);
+  }
+  
+  p {
+    font-family: "Brush Script MT", cursive;
+    margin: 40px;
+    color: #333;
+  }
+  
+  .name {
+    color: #333;
+  }
+  
+  .back {
+    font-family: Tahoma, sans-serif;
+    color: #333;
+    text-align: center;
+    margin: 30px;
+    outline-color: #333;
+    outline-style: dotted;
+  }
+
+
+  .birthdayCard:hover::before {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    animation: firework 1s ease-out;
+}
+
+@keyframes firework {
+  0% { transform: translate(var(--x), var(--initialY)); width: var(--initialSize); opacity: 1; }
+  50% { width: 0.5vmin; opacity: 1; }
+  100% { width: var(--finalSize); opacity: 0; }
+}
+
+.firework,
+.firework::before,
+.firework::after
+{
+  --initialSize: 0.5vmin;
+  --finalSize: 45vmin;
+  --particleSize: 0.2vmin;
+  --color1: yellow;
+  --color2: khaki;
+  --color3: white;
+  --color4: lime;
+  --color5: gold;
+  --color6: mediumseagreen;
+  --y: -30vmin;
+  --x: -50%;
+  --initialY: 60vmin;
+  content: "";
+  animation: firework 2s infinite;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, var(--y));
+  width: var(--initialSize);
+  aspect-ratio: 1;
+  background: 
+    /*
+    radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 0% 0%,
+    radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 100% 0%,
+    radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 100% 100%,
+    radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 0% 100%,
+    */
+    
+    radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 50% 0%,
+    radial-gradient(circle, var(--color2) var(--particleSize), #0000 0) 100% 50%,
+    radial-gradient(circle, var(--color3) var(--particleSize), #0000 0) 50% 100%,
+    radial-gradient(circle, var(--color4) var(--particleSize), #0000 0) 0% 50%,
+    
+    /* bottom right */
+    radial-gradient(circle, var(--color5) var(--particleSize), #0000 0) 80% 90%,
+    radial-gradient(circle, var(--color6) var(--particleSize), #0000 0) 95% 90%,
+    radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 90% 70%,
+    radial-gradient(circle, var(--color2) var(--particleSize), #0000 0) 100% 60%,
+    radial-gradient(circle, var(--color3) var(--particleSize), #0000 0) 55% 80%,
+    radial-gradient(circle, var(--color4) var(--particleSize), #0000 0) 70% 77%,
+    
+    /* bottom left */
+    radial-gradient(circle, var(--color5) var(--particleSize), #0000 0) 22% 90%,
+    radial-gradient(circle, var(--color6) var(--particleSize), #0000 0) 45% 90%,
+    radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 33% 70%,
+    radial-gradient(circle, var(--color2) var(--particleSize), #0000 0) 10% 60%,
+    radial-gradient(circle, var(--color3) var(--particleSize), #0000 0) 31% 80%,
+    radial-gradient(circle, var(--color4) var(--particleSize), #0000 0) 28% 77%,
+    radial-gradient(circle, var(--color5) var(--particleSize), #0000 0) 13% 72%,
+    
+    /* top left */
+    radial-gradient(circle, var(--color6) var(--particleSize), #0000 0) 80% 10%,
+    radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 95% 14%,
+    radial-gradient(circle, var(--color2) var(--particleSize), #0000 0) 90% 23%,
+    radial-gradient(circle, var(--color3) var(--particleSize), #0000 0) 100% 43%,
+    radial-gradient(circle, var(--color4) var(--particleSize), #0000 0) 85% 27%,
+    radial-gradient(circle, var(--color5) var(--particleSize), #0000 0) 77% 37%,
+    radial-gradient(circle, var(--color6) var(--particleSize), #0000 0) 60% 7%,
+    
+    /* top right */
+    radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 22% 14%,
+    radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 45% 20%,
+    radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 33% 34%,
+    radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 10% 29%,
+    radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 31% 37%,
+    radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 28% 7%,
+    radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 13% 42%
+    ;
+  background-size: var(--initialSize) var(--initialSize);
+  background-repeat: no-repeat;
+}
+
+.firework::before {
+  --x: -50%;
+  --y: -50%;
+  --initialY: -50%;
+/*   transform: translate(-20vmin, -2vmin) rotate(40deg) scale(1.3) rotateY(40deg); */
+  transform: translate(-50%, -50%) rotate(40deg) scale(1.3) rotateY(40deg);
+/*   animation: fireworkPseudo 2s infinite; */
+}
+
+.firework::after {
+  --x: -50%;
+  --y: -50%;
+  --initialY: -50%;
+/*   transform: translate(44vmin, -50%) rotate(170deg) scale(1.15) rotateY(-30deg); */
+  transform: translate(-50%, -50%) rotate(170deg) scale(1.15) rotateY(-30deg);
+/*   animation: fireworkPseudo 2s infinite; */
+}
+
+.firework:nth-child(2) {
+  --x: 30vmin;
+}
+
+.firework:nth-child(2),
+.firework:nth-child(2)::before,
+.firework:nth-child(2)::after {
+  --color1: pink;
+  --color2: violet;
+  --color3: fuchsia;
+  --color4: orchid;
+  --color5: plum;
+  --color6: lavender;  
+  --finalSize: 40vmin;
+  left: 30%;
+  top: 60%;
+  animation-delay: -0.25s;
+}
+
+.firework:nth-child(3) {
+  --x: -30vmin;
+  --y: -50vmin;
+}
+
+.firework:nth-child(3),
+.firework:nth-child(3)::before,
+.firework:nth-child(3)::after {
+  --color1: cyan;
+  --color2: lightcyan;
+  --color3: lightblue;
+  --color4: PaleTurquoise;
+  --color5: SkyBlue;
+  --color6: lavender;
+  --finalSize: 35vmin;
+  left: 70%;
+  top: 60%;
+  animation-delay: -0.4s;
+}
